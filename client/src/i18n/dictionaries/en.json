@@ -1,0 +1,10 @@
+{
+  "meta": {
+    "title": "Shopping App",
+    "description": "A simple shopping experience"
+  },
+  "home": {
+    "title": "Homepage",
+    "subtitle": "Welcome to the shopping app"
+  }
+}
