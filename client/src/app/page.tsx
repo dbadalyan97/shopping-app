@@ -1,4 +1,4 @@
-import { getDictionary } from "@/i18n/get-dictionary";
+import { getDictionary } from "@/dictionary/get-dictionary";
 
 export default async function Home() {
   const dictionary = await getDictionary();
