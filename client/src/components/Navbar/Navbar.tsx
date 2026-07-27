@@ -1,0 +1,39 @@
+import Link from "next/link";
+import Image from "next/image";
+import { SearchBar } from "@/components/SearchBar";
+import { Bell, Home, ShoppingCart } from "lucide-react";
+import { getDictionary } from "@/dictionary/get-dictionary";
+
+const Navbar = async () => {
+  const dictionary = await getDictionary();
+
+  return (
+    <nav className="w-full flex items-center justify-between border-b border-gray-200 px-2 py-1 shadow-md">
+      <Link href="/" className="flex items-center">
+        <Image
+          src="/logo.png"
+          alt={dictionary.brandName}
+          width={36}
+          height={36}
+          loading="eager"
+          unoptimized
+          className="w-6 h-6 md:w-9 md:h-9"
+        />
+        <p className="hidden md:block text-md font-medium tracking-wider">
+          {dictionary.brandName}
+        </p>
+      </Link>
+      <div className="flex items-center gap-6">
+        <SearchBar />
+        <Link href="/">
+          <Home className="w-4 h-4 text-gray-600" />
+        </Link>
+        <Bell className="w-4 h-4 text-gray-600" />
+        <ShoppingCart className="w-4 h-4 text-gray-600" />
+        <Link href="/">{dictionary.navbar.signIn}</Link>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
