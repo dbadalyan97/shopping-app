@@ -10,5 +10,26 @@
   },
   "navbar": {
     "signIn": "Sign In"
+  },
+  "footer": {
+    "allRightsReserved": "All rights reserved.",
+    "sections": {
+      "links": "Links",
+      "products": "Products",
+      "company": "Company"
+    },
+    "links": {
+      "homepage": "Homepage",
+      "contact": "Contact",
+      "termsOfService": "Terms of Service",
+      "privacyPolicy": "Privacy Policy",
+      "allProducts": "All Products",
+      "newArrivals": "New Arrivals",
+      "bestSellers": "Best Sellers",
+      "sale": "Sale",
+      "about": "About",
+      "blog": "Blog",
+      "affiliateProgram": "Affiliate Program"
+    }
   }
 }
