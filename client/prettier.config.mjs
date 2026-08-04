@@ -8,6 +8,8 @@ const config = {
   endOfLine: "lf",
   arrowParens: "always",
   bracketSpacing: true,
+  plugins: ["prettier-plugin-tailwindcss"],
+  tailwindStylesheet: "./src/app/globals.css",
 };
 
 export default config;
