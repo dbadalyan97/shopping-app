@@ -31,5 +31,22 @@
       "blog": "Blog",
       "affiliateProgram": "Affiliate Program"
     }
+  },
+  "categories": {
+    "all": "All",
+    "tShirts": "T-shirts",
+    "shoes": "Shoes",
+    "accessories": "Accessories",
+    "bags": "Bags",
+    "dresses": "Dresses",
+    "jackets": "Jackets",
+    "gloves": "Gloves"
+  },
+  "products": {
+    "adidasCoreFitTShirt": {
+      "name": "Adidas CoreFit T-Shirt",
+      "shortDescription": "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+      "description": "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
+    }
   }
 }
