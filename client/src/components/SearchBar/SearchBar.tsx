@@ -4,8 +4,8 @@ import { Search } from "lucide-react";
 
 const SearchBar: FC<SearchBarProps> = ({ placeholder = "Search..." }) => {
   return (
-    <div className="hidden sm:flex items-center gap-2 rounded-md ring-1 ring-gray-200 p-1.5">
-      <Search className="w-4 h-4 text-gray-500" />
+    <div className="hidden items-center gap-2 rounded-md p-1.5 ring-1 ring-gray-200 sm:flex">
+      <Search className="size-4 text-gray-500" />
       <input
         id="search"
         placeholder={placeholder}

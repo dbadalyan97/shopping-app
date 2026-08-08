@@ -8,7 +8,7 @@ const Navbar = async () => {
   const dictionary = await getDictionary();
 
   return (
-    <nav className="w-full flex items-center justify-between border-b border-gray-200 px-2 py-1 shadow-md">
+    <nav className="flex w-full items-center justify-between border-b border-gray-200 px-2 py-1 shadow-md">
       <Link href="/" className="flex items-center">
         <Image
           src="/logo.png"
@@ -17,19 +17,19 @@ const Navbar = async () => {
           height={36}
           loading="eager"
           unoptimized
-          className="w-6 h-6 md:w-9 md:h-9"
+          className="size-6 md:size-9"
         />
-        <p className="hidden md:block text-md font-medium tracking-wider">
+        <p className="hidden text-base font-medium tracking-wider md:block">
           {dictionary.brandName}
         </p>
       </Link>
       <div className="flex items-center gap-6">
         <SearchBar />
         <Link href="/">
-          <Home className="w-4 h-4 text-gray-600" />
+          <Home className="size-4 text-gray-600" />
         </Link>
-        <Bell className="w-4 h-4 text-gray-600" />
-        <ShoppingCart className="w-4 h-4 text-gray-600" />
+        <Bell className="size-4 text-gray-600" />
+        <ShoppingCart className="size-4 text-gray-600" />
         <Link href="/">{dictionary.navbar.signIn}</Link>
       </div>
     </nav>

@@ -8,8 +8,8 @@ const Footer = async () => {
   const { footer } = dictionary;
 
   return (
-    <div className="mt-16 flex flex-col items-center gap-8 md:justify-between md:gap-0 md:flex-row md:items-start bg-gray-800 p-8 rounded-lg">
-      <div className="flex flex-col gap-4 items-center md:items-start">
+    <div className="mt-16 flex flex-col items-center gap-8 rounded-lg bg-gray-800 p-8 md:flex-row md:items-start md:justify-between md:gap-0">
+      <div className="flex flex-col items-center gap-4 md:items-start">
         <Link href="/" className="flex items-center">
           <Image
             src="/logo.png"
@@ -18,9 +18,9 @@ const Footer = async () => {
             height={36}
             loading="eager"
             unoptimized
-            className="w-6 h-6 md:w-9 md:h-9"
+            className="size-6 md:size-9"
           />
-          <p className="hidden md:block text-md font-medium tracking-wider text-white">
+          <p className="hidden text-base font-medium tracking-wider text-white md:block">
             {dictionary.brandName}
           </p>
         </Link>
@@ -32,7 +32,7 @@ const Footer = async () => {
       {FOOTER_SECTIONS.map(({ key, links }) => (
         <div
           key={key}
-          className="flex flex-col gap-4 text-sm text-gray-400 items-center md:items-start"
+          className="flex flex-col items-center gap-4 text-sm text-gray-400 md:items-start"
         >
           <p className="text-sm text-amber-50">{footer.sections[key]}</p>
           {links.map(({ href, key: labelKey }) => (
