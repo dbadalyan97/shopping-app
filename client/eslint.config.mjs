@@ -9,7 +9,7 @@ const eslintConfig = defineConfig([
   ...nextTs,
   prettier,
   {
-    extends: [eslintPluginTailwindcss.configs.recommended],
+    ...eslintPluginTailwindcss.configs.recommended,
     settings: {
       tailwindcss:
         /** @type {import("eslint-plugin-tailwindcss").PluginSettings} */
@@ -18,6 +18,7 @@ const eslintConfig = defineConfig([
         }),
     },
     rules: {
+      ...eslintPluginTailwindcss.configs.recommended.rules,
       "tailwindcss/classnames-order": "error",
     },
   },
