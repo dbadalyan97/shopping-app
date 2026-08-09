@@ -3,7 +3,11 @@ import { ProductsType } from "@/types";
 export const PRODUCTS: ProductsType = [
   {
     id: 1,
-    key: "adidasCoreFitTShirt",
+    name: "Adidas CoreFit T-Shirt",
+    shortDescription:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    description:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
     price: 39.9,
     sizes: ["s", "m", "l", "xl", "xxl"],
     colors: ["gray", "purple", "green"],
@@ -15,38 +19,94 @@ export const PRODUCTS: ProductsType = [
   },
   {
     id: 2,
-    key: "adidasCoreFitTShirt",
-    price: 39.9,
-    sizes: ["s", "m", "l", "xl", "xxl"],
-    colors: ["gray", "purple", "green"],
-    images: {
-      gray: "/products/2g.png",
-      purple: "/products/2p.png",
-      green: "/products/2gr.png",
-    },
+    name: "Puma Ultra Warm Zip",
+    shortDescription:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    description:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    price: 59.9,
+    sizes: ["s", "m", "l", "xl"],
+    colors: ["gray", "green"],
+    images: { gray: "/products/2g.png", green: "/products/2gr.png" },
   },
   {
     id: 3,
-    key: "adidasCoreFitTShirt",
-    price: 39.9,
-    sizes: ["s", "m", "l", "xl", "xxl"],
-    colors: ["gray", "purple", "green"],
+    name: "Nike Air Essentials Pullover",
+    shortDescription:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    description:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    price: 69.9,
+    sizes: ["s", "m", "l"],
+    colors: ["green", "blue", "black"],
     images: {
-      gray: "/products/3g.png",
-      purple: "/products/3p.png",
       green: "/products/3gr.png",
+      blue: "/products/3b.png",
+      black: "/products/3bl.png",
     },
   },
   {
     id: 4,
-    key: "adidasCoreFitTShirt",
-    price: 39.9,
-    sizes: ["s", "m", "l", "xl", "xxl"],
-    colors: ["gray", "purple", "green"],
+    name: "Nike Dri Flex T-Shirt",
+    shortDescription:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    description:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    price: 29.9,
+    sizes: ["s", "m", "l"],
+    colors: ["white", "pink"],
+    images: { white: "/products/4w.png", pink: "/products/4p.png" },
+  },
+  {
+    id: 5,
+    name: "Under Armour StormFleece",
+    shortDescription:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    description:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    price: 49.9,
+    sizes: ["s", "m", "l"],
+    colors: ["red", "orange", "black"],
     images: {
-      gray: "/products/4g.png",
-      purple: "/products/4p.png",
-      green: "/products/4gr.png",
+      red: "/products/5r.png",
+      orange: "/products/5o.png",
+      black: "/products/5bl.png",
     },
+  },
+  {
+    id: 6,
+    name: "Nike Air Max 270",
+    shortDescription:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    description:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    price: 59.9,
+    sizes: ["40", "42", "43", "44"],
+    colors: ["gray", "white"],
+    images: { gray: "/products/6g.png", white: "/products/6w.png" },
+  },
+  {
+    id: 7,
+    name: "Nike Ultraboost Pulse ",
+    shortDescription:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    description:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    price: 69.9,
+    sizes: ["40", "42", "43"],
+    colors: ["gray", "pink"],
+    images: { gray: "/products/7g.png", pink: "/products/7p.png" },
+  },
+  {
+    id: 8,
+    name: "Levi’s Classic Denim",
+    shortDescription:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    description:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    price: 59.9,
+    sizes: ["s", "m", "l"],
+    colors: ["blue", "green"],
+    images: { blue: "/products/8b.png", green: "/products/8gr.png" },
   },
 ];
