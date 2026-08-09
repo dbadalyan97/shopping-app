@@ -1,24 +1,56 @@
-import Link from "next/link";
-import { ProductCardProps } from "./types";
-import { getDictionary } from "@/dictionary/get-dictionary";
-import Image from "next/image";
+"use client";
 
-const ProductCard = async ({ product }: ProductCardProps) => {
-  const dictionary = await getDictionary();
-  const { name } = dictionary.products[product.key];
+import { FC, useState } from "react";
+import {
+  ProductCardActions,
+  ProductCardImage,
+  ProductCardInfo,
+  ProductColorSelect,
+  ProductSizeSelect,
+} from "./components";
+import { ProductCardProps, ProductTypeChangeParams } from "./types";
+
+const ProductCard: FC<ProductCardProps> = ({ product }) => {
+  const [productTypes, setProductTypes] = useState({
+    size: product.sizes[0],
+    color: product.colors[0],
+  });
+
+  const handleProductTypeChange = ({
+    type,
+    value,
+  }: ProductTypeChangeParams) => {
+    setProductTypes((prev) => ({
+      ...prev,
+      [type]: value,
+    }));
+  };
 
   return (
     <div className="overflow-hidden rounded-lg shadow-lg">
-      <Link href={`/products/${product.id}`}>
-        <div className="relative aspect-2/3">
-          <Image
-            src={product.images[product.colors[0]] || ""}
-            alt={name}
-            fill
-            className="object-cover"
+      <ProductCardImage
+        productId={product.id}
+        name={product.name}
+        imageSrc={product.images[productTypes.color] || ""}
+      />
+      <div className="flex flex-col gap-4 p-4">
+        <ProductCardInfo
+          name={product.name}
+          shortDescription={product.shortDescription}
+        />
+        <div className="flex items-center justify-between gap-4 text-xs">
+          <ProductSizeSelect
+            sizes={product.sizes}
+            onChange={handleProductTypeChange}
+          />
+          <ProductColorSelect
+            colors={product.colors}
+            selectedColor={productTypes.color}
+            onChange={handleProductTypeChange}
           />
         </div>
-      </Link>
+        <ProductCardActions price={product.price} />
+      </div>
     </div>
   );
 };
