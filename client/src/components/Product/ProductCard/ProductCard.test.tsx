@@ -5,7 +5,11 @@ import type { ProductType } from "@/types";
 
 const product: ProductType = {
   id: 1,
-  key: "adidasCoreFitTShirt",
+  name: "Adidas CoreFit T-Shirt",
+  shortDescription:
+    "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+  description:
+    "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
   price: 39.9,
   sizes: ["s", "m", "l"],
   colors: ["gray", "purple"],
@@ -16,15 +20,15 @@ const product: ProductType = {
 };
 
 describe("ProductCard", () => {
-  it("links to the product detail page", async () => {
-    render(await ProductCard({ product }));
+  it("links to the product detail page", () => {
+    render(<ProductCard product={product} />);
 
     const link = screen.getByRole("link");
     expect(link).toHaveAttribute("href", "/products/1");
   });
 
-  it("renders the product image with the translated name as alt text", async () => {
-    render(await ProductCard({ product }));
+  it("renders the product image with the product name as alt text", () => {
+    render(<ProductCard product={product} />);
 
     const image = screen.getByRole("img", { name: "Adidas CoreFit T-Shirt" });
     expect(image).toHaveAttribute("src", "/products/1g.png");

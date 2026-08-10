@@ -13,10 +13,6 @@ vi.mock("next/image", () => ({
   default: ({
     src,
     alt,
-    fill: _fill,
-    unoptimized: _unoptimized,
-    loading: _loading,
-    priority: _priority,
     ...props
   }: ImgHTMLAttributes<HTMLImageElement> & {
     fill?: boolean;
