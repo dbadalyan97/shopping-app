@@ -25,4 +25,20 @@ describe("ProductList", () => {
       ).toBeInTheDocument();
     }
   });
+
+  it("links to filtered products when a category is provided", () => {
+    render(<ProductList category="shoes" />);
+
+    expect(
+      screen.getByRole("link", { name: "View All Products" }),
+    ).toHaveAttribute("href", "/products?category=shoes");
+  });
+
+  it("links to all products when category is empty", () => {
+    render(<ProductList category="" />);
+
+    expect(
+      screen.getByRole("link", { name: "View All Products" }),
+    ).toHaveAttribute("href", "/products");
+  });
 });
