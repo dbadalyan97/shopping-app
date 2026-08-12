@@ -2,8 +2,10 @@ import Link from "next/link";
 import { Categories } from "../Categories";
 import { ProductCard } from "../ProductCard";
 import { PRODUCTS } from "@/constants";
+import { FC } from "react";
+import ProductListProps from "./types";
 
-const ProductList = ({ category }: { category: string }) => {
+const ProductList: FC<ProductListProps> = ({ category }) => {
   return (
     <div className="w-full">
       <Categories />
