@@ -19,7 +19,7 @@ export default async function Home({
           sizes="(max-width: 768px) 100vw, (max-width: 1024px)"
         />
       </div>
-      <ProductList category={category} />
+      <ProductList category={category} path="homepage" />
     </div>
   );
 }
