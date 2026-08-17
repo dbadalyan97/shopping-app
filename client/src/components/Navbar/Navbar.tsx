@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { SearchBar } from "@/components/SearchBar";
-import { Bell, Home, ShoppingCart } from "lucide-react";
+import { Bell, Home } from "lucide-react";
 import { getDictionary } from "@/dictionary/get-dictionary";
+import { ShoppingCart } from "../ShoppingCart";
 
 const Navbar = async () => {
   const dictionary = await getDictionary();
@@ -29,7 +30,7 @@ const Navbar = async () => {
           <Home className="size-4 text-gray-600" />
         </Link>
         <Bell className="size-4 text-gray-600" />
-        <ShoppingCart className="size-4 text-gray-600" />
+        <ShoppingCart />
         <Link href="/">{dictionary.navbar.signIn}</Link>
       </div>
     </nav>
