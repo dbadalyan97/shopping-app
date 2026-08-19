@@ -4,6 +4,7 @@ import { PaymentForm } from "@/components/Form/PaymentForm";
 import { ShippingForm } from "@/components/Form/ShippingForm";
 import { PRODUCTS } from "@/constants";
 import { CartItemsType } from "@/types/cart";
+import { ShippingFormInputs } from "@/types/form/shippingFormSchema";
 import clsx from "clsx";
 import { ArrowRightIcon, Trash2 } from "lucide-react";
 import Image from "next/image";
@@ -40,7 +41,9 @@ const cartItems: CartItemsType = PRODUCTS.reduce((acc, product) => {
 const CartPage = () => {
   const searchParams = useSearchParams();
   const router = useRouter();
-  const [shippingForm, setShippingForm] = useState(null);
+  const [shippingForm, setShippingForm] = useState<ShippingFormInputs | null>(
+    null,
+  );
   const activeStep = searchParams.get("step") || "1";
 
   return (
@@ -87,7 +90,6 @@ const CartPage = () => {
                       className="object-contain"
                     />
                   </div>
-
                   <div className="flex flex-col justify-between">
                     <div className="flex flex-col gap-1">
                       <p className="text-sm font-medium">{item.name}</p>
@@ -110,7 +112,7 @@ const CartPage = () => {
               </div>
             ))
           ) : activeStep === "2" ? (
-            <ShippingForm />
+            <ShippingForm setShippingForm={setShippingForm} />
           ) : activeStep === "3" && shippingForm ? (
             <PaymentForm />
           ) : (
