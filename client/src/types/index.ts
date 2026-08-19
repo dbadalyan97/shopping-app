@@ -6,3 +6,5 @@ export type {
 } from "./footer";
 export type { ProductType, ProductsType } from "./product";
 export type { CategoryType, CategoriesType, CategoryKey } from "./categories";
+export type { ShippingFormType } from "./form";
+
