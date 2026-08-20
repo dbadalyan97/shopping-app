@@ -1,4 +1,6 @@
 "use client";
+
+import { useDictionary } from "@/hooks/useDictionary";
 import {
   PaymentFormInputs,
   paymentFormSchema,
@@ -12,6 +14,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 const PaymentForm: FC<PaymentFormProps> = ({ setPaymentForm }) => {
+  const { cart, paymentForm } = useDictionary();
   const {
     register,
     handleSubmit,
@@ -36,12 +39,12 @@ const PaymentForm: FC<PaymentFormProps> = ({ setPaymentForm }) => {
           htmlFor="cardHolder"
           className="text-xs font-medium text-gray-500"
         >
-          Card Holder
+          {paymentForm.cardHolder}
         </label>
         <input
           type="text"
           id="cardHolder"
-          placeholder="John Doe"
+          placeholder={paymentForm.cardHolderPlaceholder}
           className="border-b border-gray-200 py-2 text-sm outline-none"
           {...register("cardHolder")}
         />
@@ -54,12 +57,12 @@ const PaymentForm: FC<PaymentFormProps> = ({ setPaymentForm }) => {
           htmlFor="cardNumber"
           className="text-xs font-medium text-gray-500"
         >
-          Card Number
+          {paymentForm.cardNumber}
         </label>
         <input
           type="text"
           id="cardNumber"
-          placeholder="1234567890123456"
+          placeholder={paymentForm.cardNumberPlaceholder}
           className="border-b border-gray-200 py-2 text-sm outline-none"
           {...register("cardNumber")}
         />
@@ -72,12 +75,12 @@ const PaymentForm: FC<PaymentFormProps> = ({ setPaymentForm }) => {
           htmlFor="expirationDate"
           className="text-xs font-medium text-gray-500"
         >
-          Expiration Date
+          {paymentForm.expirationDate}
         </label>
         <input
           type="text"
           id="expirationDate"
-          placeholder="123456789"
+          placeholder={paymentForm.expirationDatePlaceholder}
           className="border-b border-gray-200 py-2 text-sm outline-none"
           {...register("expirationDate")}
         />
@@ -92,12 +95,12 @@ const PaymentForm: FC<PaymentFormProps> = ({ setPaymentForm }) => {
           htmlFor="expirationDate"
           className="text-xs font-medium text-gray-500"
         >
-          CVV
+          {paymentForm.cvv}
         </label>
         <input
           type="text"
           id="cvv"
-          placeholder="123"
+          placeholder={paymentForm.cvvPlaceholder}
           className="border-b border-gray-200 py-2 text-sm outline-none"
           {...register("cvv")}
         />
@@ -108,21 +111,21 @@ const PaymentForm: FC<PaymentFormProps> = ({ setPaymentForm }) => {
       <div className="mt-4 flex items-center gap-2">
         <Image
           src="/klarna.png"
-          alt="Klarna"
+          alt={paymentForm.klarnaAlt}
           width={50}
           height={25}
           className="rounded-md"
         />
         <Image
           src="/cards.png"
-          alt="Cards"
+          alt={paymentForm.cardsAlt}
           width={50}
           height={25}
           className="rounded-md"
         />
         <Image
           src="/stripe.png"
-          alt="Stripe"
+          alt={paymentForm.stripeAlt}
           width={50}
           height={25}
           className="rounded-md"
@@ -132,7 +135,7 @@ const PaymentForm: FC<PaymentFormProps> = ({ setPaymentForm }) => {
         type="submit"
         className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-gray-800 p-2 text-white transition-all hover:bg-gray-900"
       >
-        Continue
+        {cart.continue}
         <ShoppingCart className="size-3" />
       </button>
     </form>

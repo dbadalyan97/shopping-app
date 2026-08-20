@@ -1,3 +1,6 @@
+"use client";
+
+import { useDictionary } from "@/hooks/useDictionary";
 import {
   ShippingFormInputs,
   shippingFormSchema,
@@ -10,6 +13,7 @@ import { ShippingFormProps } from "./types";
 import { useRouter } from "next/navigation";
 
 const ShippingForm: FC<ShippingFormProps> = ({ setShippingForm }) => {
+  const { cart, shippingForm } = useDictionary();
   const {
     register,
     handleSubmit,
@@ -31,12 +35,12 @@ const ShippingForm: FC<ShippingFormProps> = ({ setShippingForm }) => {
     >
       <div className="flex flex-col gap-1">
         <label htmlFor="name" className="text-xs font-medium text-gray-500">
-          Name
+          {shippingForm.name}
         </label>
         <input
           type="text"
           id="name"
-          placeholder="John Doe"
+          placeholder={shippingForm.namePlaceholder}
           className="border-b border-gray-200 py-2 text-sm outline-none"
           {...register("name")}
         />
@@ -46,12 +50,12 @@ const ShippingForm: FC<ShippingFormProps> = ({ setShippingForm }) => {
       </div>
       <div className="flex flex-col gap-1">
         <label htmlFor="email" className="text-xs font-medium text-gray-500">
-          Email
+          {shippingForm.email}
         </label>
         <input
           type="email"
           id="email"
-          placeholder="john.doe@example.com"
+          placeholder={shippingForm.emailPlaceholder}
           className="border-b border-gray-200 py-2 text-sm outline-none"
           {...register("email")}
         />
@@ -61,12 +65,12 @@ const ShippingForm: FC<ShippingFormProps> = ({ setShippingForm }) => {
       </div>
       <div className="flex flex-col gap-1">
         <label htmlFor="phone" className="text-xs font-medium text-gray-500">
-          Phone
+          {shippingForm.phone}
         </label>
         <input
           type="text"
           id="phone"
-          placeholder="123456789"
+          placeholder={shippingForm.phonePlaceholder}
           className="border-b border-gray-200 py-2 text-sm outline-none"
           {...register("phone")}
         />
@@ -76,12 +80,12 @@ const ShippingForm: FC<ShippingFormProps> = ({ setShippingForm }) => {
       </div>
       <div className="flex flex-col gap-1">
         <label htmlFor="address" className="text-xs font-medium text-gray-500">
-          Address
+          {shippingForm.address}
         </label>
         <input
           type="text"
           id="address"
-          placeholder="123 Main St, Anytown, USA"
+          placeholder={shippingForm.addressPlaceholder}
           className="border-b border-gray-200 py-2 text-sm outline-none"
           {...register("address")}
         />
@@ -91,12 +95,12 @@ const ShippingForm: FC<ShippingFormProps> = ({ setShippingForm }) => {
       </div>
       <div className="flex flex-col gap-1">
         <label htmlFor="city" className="text-xs font-medium text-gray-500">
-          City
+          {shippingForm.city}
         </label>
         <input
           type="text"
           id="city"
-          placeholder="Anytown"
+          placeholder={shippingForm.cityPlaceholder}
           className="border-b border-gray-200 py-2 text-sm outline-none"
           {...register("city")}
         />
@@ -108,7 +112,7 @@ const ShippingForm: FC<ShippingFormProps> = ({ setShippingForm }) => {
         type="submit"
         className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-gray-800 p-2 text-white transition-all hover:bg-gray-900"
       >
-        Continue
+        {cart.continue}
         <ArrowRight className="size-3" />
       </button>
     </form>

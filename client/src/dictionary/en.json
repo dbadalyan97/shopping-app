@@ -48,5 +48,43 @@
       "shortDescription": "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
       "description": "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
     }
+  },
+  "cart": {
+    "title": "Your Shopping Cart",
+    "quantity": "Quantity",
+    "size": "Size",
+    "color": "Color",
+    "details": "Cart Details",
+    "subtotal": "Subtotal",
+    "discount": "Discount( 10%)",
+    "shippingFee": "Shipping Fee",
+    "total": "Total",
+    "continue": "Continue",
+    "fillShippingForm": "Please fill in the shipping form to continue."
+  },
+  "shippingForm": {
+    "name": "Name",
+    "namePlaceholder": "John Doe",
+    "email": "Email",
+    "emailPlaceholder": "john.doe@example.com",
+    "phone": "Phone",
+    "phonePlaceholder": "123456789",
+    "address": "Address",
+    "addressPlaceholder": "123 Main St, Anytown, USA",
+    "city": "City",
+    "cityPlaceholder": "Anytown"
+  },
+  "paymentForm": {
+    "cardHolder": "Card Holder",
+    "cardHolderPlaceholder": "John Doe",
+    "cardNumber": "Card Number",
+    "cardNumberPlaceholder": "1234567890123456",
+    "expirationDate": "Expiration Date",
+    "expirationDatePlaceholder": "123456789",
+    "cvv": "CVV",
+    "cvvPlaceholder": "123",
+    "klarnaAlt": "Klarna",
+    "cardsAlt": "Cards",
+    "stripeAlt": "Stripe"
   }
 }
