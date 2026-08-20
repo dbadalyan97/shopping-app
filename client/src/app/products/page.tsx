@@ -1,4 +1,5 @@
 import { ProductList } from "@/components/Product/ProductList";
+import { Path } from "@/enums";
 
 export default async function Home({
   searchParams,
@@ -9,7 +10,7 @@ export default async function Home({
 
   return (
     <div className="">
-      <ProductList category={category} path="products" />
+      <ProductList category={category} path={Path.Products} />
     </div>
   );
 }

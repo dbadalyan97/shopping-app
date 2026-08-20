@@ -1,4 +1,5 @@
 import { ProductList } from "@/components/Product/ProductList";
+import { Path } from "@/enums";
 import Image from "next/image";
 
 export default async function Home({
@@ -19,7 +20,7 @@ export default async function Home({
           sizes="(max-width: 768px) 100vw, (max-width: 1024px)"
         />
       </div>
-      <ProductList category={category} path="homepage" />
+      <ProductList category={category} path={Path.Homepage} />
     </div>
   );
 }

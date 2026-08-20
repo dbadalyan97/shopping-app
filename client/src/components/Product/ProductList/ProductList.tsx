@@ -5,12 +5,13 @@ import { PRODUCTS } from "@/constants";
 import { FC } from "react";
 import ProductListProps from "./types";
 import { Filter } from "@/components/Filter";
+import { Path } from "@/enums";
 
 const ProductList: FC<ProductListProps> = ({ category, path }) => {
   return (
     <div className="w-full">
       <Categories />
-      {path === "products" && <Filter />}
+      {path === Path.Products && <Filter />}
       <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
         {PRODUCTS.map((product) => (
           <ProductCard key={product.id} product={product} />

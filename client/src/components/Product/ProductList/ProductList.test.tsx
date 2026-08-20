@@ -2,9 +2,14 @@ import { describe, expect, it, vi } from "vitest";
 import { render, screen } from "@/test/test-utils";
 import ProductList from "./ProductList";
 import { PRODUCTS } from "@/constants";
+import { Category, Path } from "@/enums";
 
 vi.mock("../Categories", () => ({
   Categories: () => <div data-testid="categories">Categories</div>,
+}));
+
+vi.mock("@/components/Filter", () => ({
+  Filter: () => <div data-testid="filter">Filter</div>,
 }));
 
 vi.mock("../ProductCard", () => ({
@@ -15,7 +20,7 @@ vi.mock("../ProductCard", () => ({
 
 describe("ProductList", () => {
   it("renders categories and a card for each product", () => {
-    render(<ProductList category="test" />);
+    render(<ProductList category="test" path={Path.Products} />);
 
     expect(screen.getByTestId("categories")).toBeInTheDocument();
 
@@ -27,15 +32,15 @@ describe("ProductList", () => {
   });
 
   it("links to filtered products when a category is provided", () => {
-    render(<ProductList category="shoes" />);
+    render(<ProductList category={Category.Shoes} path={Path.Products} />);
 
     expect(
       screen.getByRole("link", { name: "View All Products" }),
-    ).toHaveAttribute("href", "/products?category=shoes");
+    ).toHaveAttribute("href", `/products?category=${Category.Shoes}`);
   });
 
   it("links to all products when category is empty", () => {
-    render(<ProductList category="" />);
+    render(<ProductList category="" path={Path.Homepage} />);
 
     expect(
       screen.getByRole("link", { name: "View All Products" }),
