@@ -1,6 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import userEvent from "@testing-library/user-event";
 import { render, screen } from "@/test/test-utils";
+import { Category } from "@/enums";
 import Filter from "./Filter";
 
 const push = vi.fn();
@@ -49,15 +50,18 @@ describe("Filter", () => {
   it("preserves existing query params when sorting", async () => {
     const user = userEvent.setup();
     useSearchParams.mockReturnValue(
-      new URLSearchParams("category=shoes"),
+      new URLSearchParams(`category=${Category.Shoes}`),
     );
 
     render(<Filter />);
 
     await user.selectOptions(screen.getByRole("combobox"), "desc");
 
-    expect(push).toHaveBeenCalledWith("/products?category=shoes&sort=desc", {
-      scroll: false,
-    });
+    expect(push).toHaveBeenCalledWith(
+      `/products?category=${Category.Shoes}&sort=desc`,
+      {
+        scroll: false,
+      },
+    );
   });
 });

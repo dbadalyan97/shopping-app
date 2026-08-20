@@ -1,4 +1,5 @@
 import { CategoriesType } from "@/types";
+import { Category } from "@/enums";
 import {
   ShoppingBasket,
   Shirt,
@@ -13,41 +14,41 @@ export const CATEGORIES: CategoriesType = [
   {
     key: "all",
     icon: <ShoppingBasket className="size-4" />,
-    slug: "all",
+    slug: Category.All,
   },
   {
     key: "tShirts",
     icon: <Shirt className="size-4" />,
-    slug: "t-shirts",
+    slug: Category.TShirts,
   },
   {
     key: "shoes",
     icon: <Footprints className="size-4" />,
-    slug: "shoes",
+    slug: Category.Shoes,
   },
   {
     key: "accessories",
     icon: <Glasses className="size-4" />,
-    slug: "accessories",
+    slug: Category.Accessories,
   },
   {
     key: "bags",
     icon: <Briefcase className="size-4" />,
-    slug: "bags",
+    slug: Category.Bags,
   },
   {
     key: "dresses",
     icon: <Venus className="size-4" />,
-    slug: "dresses",
+    slug: Category.Dresses,
   },
   {
     key: "jackets",
     icon: <Shirt className="size-4" />,
-    slug: "jackets",
+    slug: Category.Jackets,
   },
   {
     key: "gloves",
     icon: <Hand className="size-4" />,
-    slug: "gloves",
+    slug: Category.Gloves,
   },
 ];

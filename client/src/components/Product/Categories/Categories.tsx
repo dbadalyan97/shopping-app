@@ -1,6 +1,7 @@
 "use client";
 
 import { CATEGORIES } from "@/constants";
+import { Category } from "@/enums";
 import { useDictionary } from "@/hooks/useDictionary";
 import clsx from "clsx";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
@@ -12,9 +13,9 @@ const Categories = () => {
   const selectedCategory = searchParams.get("category");
   const { categories } = useDictionary();
 
-  const handleChange = (value: string | null) => {
+  const handleChange = (value: Category) => {
     const params = new URLSearchParams(searchParams);
-    params.set("category", value || "all");
+    params.set("category", value);
     router.push(`${pathname}?${params.toString()}`, { scroll: false });
   };
 

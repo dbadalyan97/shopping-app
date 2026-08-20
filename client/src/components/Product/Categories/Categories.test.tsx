@@ -1,6 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import userEvent from "@testing-library/user-event";
 import { renderWithProviders, screen } from "@/test/test-utils";
+import { Category } from "@/enums";
 import Categories from "./Categories";
 
 const push = vi.fn();
@@ -36,7 +37,9 @@ describe("Categories", () => {
   });
 
   it("highlights the selected category from the URL", () => {
-    useSearchParams.mockReturnValue(new URLSearchParams("category=shoes"));
+    useSearchParams.mockReturnValue(
+      new URLSearchParams(`category=${Category.Shoes}`),
+    );
 
     renderWithProviders(<Categories />);
 
@@ -50,6 +53,8 @@ describe("Categories", () => {
 
     await user.click(screen.getByText("Bags"));
 
-    expect(push).toHaveBeenCalledWith("/?category=bags", { scroll: false });
+    expect(push).toHaveBeenCalledWith(`/?category=${Category.Bags}`, {
+      scroll: false,
+    });
   });
 });
