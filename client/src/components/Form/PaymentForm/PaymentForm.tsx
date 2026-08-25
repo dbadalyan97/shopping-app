@@ -92,7 +92,7 @@ const PaymentForm: FC<PaymentFormProps> = ({ setPaymentForm }) => {
       </div>
       <div className="flex flex-col gap-1">
         <label
-          htmlFor="expirationDate"
+          htmlFor="cvv"
           className="text-xs font-medium text-gray-500"
         >
           {paymentForm.cvv}
