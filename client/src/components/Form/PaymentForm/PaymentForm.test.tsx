@@ -17,9 +17,9 @@ describe("PaymentForm", () => {
   it("renders payment provider images", () => {
     renderWithProviders(<PaymentForm setPaymentForm={vi.fn()} />);
 
-    expect(screen.getByAltText("Klarna")).toBeInTheDocument();
-    expect(screen.getByAltText("Cards")).toBeInTheDocument();
-    expect(screen.getByAltText("Stripe")).toBeInTheDocument();
+    expect(screen.getByAltText("klarnaAlt")).toBeInTheDocument();
+    expect(screen.getByAltText("cardsAlt")).toBeInTheDocument();
+    expect(screen.getByAltText("stripeAlt")).toBeInTheDocument();
   });
 
   it("shows validation errors when the form is submitted empty", async () => {
