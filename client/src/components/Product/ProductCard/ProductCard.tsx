@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useState } from "react";
+import { FC, useCallback, useState } from "react";
 import {
   ProductCardActions,
   ProductCardImage,
@@ -9,8 +9,10 @@ import {
   ProductSizeSelect,
 } from "./components";
 import { ProductCardProps, ProductTypeChangeParams } from "./types";
+import { useCartStore } from "@/store";
 
 const ProductCard: FC<ProductCardProps> = ({ product }) => {
+  const { addToCart } = useCartStore();
   const [productTypes, setProductTypes] = useState({
     size: product.sizes[0],
     color: product.colors[0],
@@ -25,6 +27,15 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
       [type]: value,
     }));
   };
+
+  const handleAddToCart = useCallback(() => {
+    addToCart({
+      ...product,
+      quantity: 1,
+      selectedColor: productTypes.color,
+      selectedSize: productTypes.size,
+    });
+  }, [addToCart, product, productTypes.color, productTypes.size]);
 
   return (
     <div className="overflow-hidden rounded-lg shadow-lg">
@@ -49,7 +60,10 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
             onChange={handleProductTypeChange}
           />
         </div>
-        <ProductCardActions price={product.price} />
+        <ProductCardActions
+          price={product.price}
+          onAddToCart={handleAddToCart}
+        />
       </div>
     </div>
   );

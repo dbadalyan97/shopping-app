@@ -4,13 +4,13 @@ import ProductCardActions from "./ProductCardActions";
 
 describe("ProductCardActions", () => {
   it("renders the formatted price", () => {
-    render(<ProductCardActions price={39.9} />);
+    render(<ProductCardActions price={39.9} onAddToCart={() => {}} />);
 
     expect(screen.getByText("$39.90")).toBeInTheDocument();
   });
 
   it("renders the add to cart button", () => {
-    render(<ProductCardActions price={19.99} />);
+    render(<ProductCardActions price={19.99} onAddToCart={() => {}} />);
 
     expect(
       screen.getByRole("button", { name: /Add to Cart/i }),
