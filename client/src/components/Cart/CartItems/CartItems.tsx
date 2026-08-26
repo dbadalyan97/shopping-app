@@ -1,11 +1,14 @@
+"use client";
 import { CartItem } from "@/components/Cart/CartItem";
 import { FC } from "react";
-import { CartItemsProps } from "./types";
+import { useCartStore } from "@/store";
 
-const CartItems: FC<CartItemsProps> = ({ items }) => {
+const CartItems: FC = () => {
+  const { cart } = useCartStore();
+
   return (
     <>
-      {items.map((item) => (
+      {cart.map((item) => (
         <CartItem key={item.id} item={item} />
       ))}
     </>

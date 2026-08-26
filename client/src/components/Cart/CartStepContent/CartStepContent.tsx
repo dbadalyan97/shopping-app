@@ -9,22 +9,21 @@ import { CartStepContentProps } from "./types";
 
 const CartStepContent: FC<CartStepContentProps> = ({
   activeStep,
-  cartItems,
   shippingForm,
   setShippingForm,
 }) => {
-  const { cart } = useDictionary();
+  const { cart: cartInfo } = useDictionary();
 
   return (
     <div className="flex w-full flex-col gap-8 rounded-lg border border-gray-100 p-8 shadow-lg lg:w-7/12">
       {activeStep === "1" ? (
-        <CartItems items={cartItems} />
+        <CartItems />
       ) : activeStep === "2" ? (
         <ShippingForm setShippingForm={setShippingForm} />
       ) : activeStep === "3" && shippingForm ? (
         <PaymentForm />
       ) : (
-        <p className="text-sm text-gray-500">{cart.fillShippingForm}</p>
+        <p className="text-sm text-gray-500">{cartInfo.fillShippingForm}</p>
       )}
     </div>
   );

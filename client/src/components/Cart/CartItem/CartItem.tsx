@@ -5,9 +5,15 @@ import { Trash2 } from "lucide-react";
 import Image from "next/image";
 import { FC } from "react";
 import { CartItemProps } from "./types";
+import { useCartStore } from "@/store";
 
 const CartItem: FC<CartItemProps> = ({ item }) => {
   const { cart } = useDictionary();
+  const { removeFromCart } = useCartStore();
+
+  const handleRemoveFromCart = () => {
+    removeFromCart(item.id);
+  };
 
   return (
     <div className="flex items-center justify-between">
@@ -36,7 +42,10 @@ const CartItem: FC<CartItemProps> = ({ item }) => {
           <p className="font-medium">${item.price}</p>
         </div>
       </div>
-      <button className="flex size-8 cursor-pointer items-center justify-center rounded-full bg-red-100 text-red-400 transition-all duration-300 hover:bg-red-200">
+      <button
+        onClick={handleRemoveFromCart}
+        className="flex size-8 cursor-pointer items-center justify-center rounded-full bg-red-100 text-red-400 transition-all duration-300 hover:bg-red-200"
+      >
         <Trash2 className="size-3" />
       </button>
     </div>

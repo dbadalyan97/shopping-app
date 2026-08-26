@@ -21,8 +21,8 @@ const cartItems = [
   {
     ...PRODUCTS[0],
     quantity: 1,
-    selectedSize: PRODUCTS[0].sizes[0],
-    selectedColor: PRODUCTS[0].colors[0],
+    selectedSize: PRODUCTS[0]?.sizes[0],
+    selectedColor: PRODUCTS[0]?.colors[0],
   },
 ];
 
@@ -31,7 +31,6 @@ describe("CartStepContent", () => {
     renderWithProviders(
       <CartStepContent
         activeStep="1"
-        cartItems={cartItems}
         shippingForm={null}
         setShippingForm={vi.fn()}
       />,
@@ -44,7 +43,6 @@ describe("CartStepContent", () => {
     renderWithProviders(
       <CartStepContent
         activeStep="2"
-        cartItems={cartItems}
         shippingForm={null}
         setShippingForm={vi.fn()}
       />,
@@ -57,7 +55,6 @@ describe("CartStepContent", () => {
     renderWithProviders(
       <CartStepContent
         activeStep="3"
-        cartItems={cartItems}
         shippingForm={{
           name: "John Doe",
           email: "john@example.com",
@@ -76,7 +73,6 @@ describe("CartStepContent", () => {
     renderWithProviders(
       <CartStepContent
         activeStep="3"
-        cartItems={cartItems}
         shippingForm={null}
         setShippingForm={vi.fn()}
       />,

@@ -2,7 +2,6 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import userEvent from "@testing-library/user-event";
 import { renderWithProviders, screen } from "@/test/test-utils";
 import CartDetails from "./CartDetails";
-import { PRODUCTS } from "@/constants";
 
 const push = vi.fn();
 
@@ -10,28 +9,13 @@ vi.mock("next/navigation", () => ({
   useRouter: () => ({ push }),
 }));
 
-const cartItems = [
-  {
-    ...PRODUCTS[0],
-    quantity: 2,
-    selectedSize: PRODUCTS[0].sizes[0],
-    selectedColor: PRODUCTS[0].colors[0],
-  },
-  {
-    ...PRODUCTS[1],
-    quantity: 1,
-    selectedSize: PRODUCTS[1].sizes[0],
-    selectedColor: PRODUCTS[1].colors[0],
-  },
-];
-
 describe("CartDetails", () => {
   beforeEach(() => {
     push.mockReset();
   });
 
   it("renders the cart summary rows with the computed subtotal", () => {
-    renderWithProviders(<CartDetails cartItems={cartItems} activeStep="1" />);
+    renderWithProviders(<CartDetails activeStep="1" />);
 
     expect(screen.getByText("Cart Details")).toBeInTheDocument();
     expect(screen.getByText("Subtotal")).toBeInTheDocument();
@@ -45,7 +29,7 @@ describe("CartDetails", () => {
   it("navigates to the shipping step from the first step", async () => {
     const user = userEvent.setup();
 
-    renderWithProviders(<CartDetails cartItems={cartItems} activeStep="1" />);
+    renderWithProviders(<CartDetails activeStep="1" />);
 
     await user.click(screen.getByRole("button", { name: /continue/i }));
 
@@ -53,7 +37,7 @@ describe("CartDetails", () => {
   });
 
   it("hides the continue button after the first step", () => {
-    renderWithProviders(<CartDetails cartItems={cartItems} activeStep="2" />);
+    renderWithProviders(<CartDetails activeStep="2" />);
 
     expect(
       screen.queryByRole("button", { name: /continue/i }),
