@@ -10,6 +10,7 @@ import {
 } from "./components";
 import { ProductCardProps, ProductTypeChangeParams } from "./types";
 import { useCartStore } from "@/store";
+import { toast } from "react-toastify";
 
 const ProductCard: FC<ProductCardProps> = ({ product }) => {
   const { addToCart } = useCartStore();
@@ -35,6 +36,8 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
       selectedColor: productTypes.color,
       selectedSize: productTypes.size,
     });
+
+    toast.success("Product added to cart");
   }, [addToCart, product, productTypes.color, productTypes.size]);
 
   return (

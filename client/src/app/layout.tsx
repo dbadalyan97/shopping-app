@@ -7,6 +7,7 @@ import { getDictionary } from "@/dictionary/get-dictionary";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { ToastContainer } from "react-toastify";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -48,6 +49,7 @@ export default async function RootLayout({
             {children}
             <Footer />
           </div>
+          <ToastContainer position="bottom-right" />
         </DictionaryProvider>
       </body>
     </html>
