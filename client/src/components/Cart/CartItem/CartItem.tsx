@@ -13,7 +13,7 @@ const CartItem: FC<CartItemProps> = ({ item }) => {
   const { removeFromCart } = useCartStore();
 
   const handleRemoveFromCart = () => {
-    removeFromCart(item.id);
+    removeFromCart(item);
     toast.success(`${item.name} removed from cart`);
   };
 

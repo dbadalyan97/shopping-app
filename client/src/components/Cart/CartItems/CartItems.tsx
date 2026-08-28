@@ -9,7 +9,10 @@ const CartItems: FC = () => {
   return (
     <>
       {cart.map((item) => (
-        <CartItem key={item.id} item={item} />
+        <CartItem
+          key={item.id + item.selectedSize + item.selectedColor}
+          item={item}
+        />
       ))}
     </>
   );

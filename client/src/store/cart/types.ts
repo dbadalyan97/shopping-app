@@ -6,6 +6,7 @@ export interface CartStoreStateType {
 
 export type CartStoreActionType = {
   addToCart: (product: CartItemType) => void;
-  removeFromCart: (productId: CartItemType["id"]) => void;
+  removeFromCart: (product: CartItemType) => void;
   clearCart: () => void;
+  hasHydrated: boolean;
 };
