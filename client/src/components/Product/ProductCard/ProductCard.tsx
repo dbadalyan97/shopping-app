@@ -10,10 +10,12 @@ import {
 } from "./components";
 import { ProductCardProps, ProductTypeChangeParams } from "./types";
 import { useCartStore } from "@/store";
+import { useDictionary } from "@/hooks/useDictionary";
 import { toast } from "react-toastify";
 
 const ProductCard: FC<ProductCardProps> = ({ product }) => {
   const { addToCart } = useCartStore();
+  const { toast: toastMessages } = useDictionary();
   const [productTypes, setProductTypes] = useState({
     size: product.sizes[0],
     color: product.colors[0],
@@ -37,8 +39,14 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
       selectedSize: productTypes.size,
     });
 
-    toast.success("Product added to cart");
-  }, [addToCart, product, productTypes.color, productTypes.size]);
+    toast.success(toastMessages.addedToCart.replace("{name}", product.name));
+  }, [
+    addToCart,
+    product,
+    productTypes.color,
+    productTypes.size,
+    toastMessages.addedToCart,
+  ]);
 
   return (
     <div className="overflow-hidden rounded-lg shadow-lg">

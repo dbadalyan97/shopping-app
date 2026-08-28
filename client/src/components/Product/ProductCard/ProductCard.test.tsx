@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import userEvent from "@testing-library/user-event";
-import { render, screen } from "@/test/test-utils";
+import { renderWithProviders, screen } from "@/test/test-utils";
 import ProductCard from "./ProductCard";
 import type { ProductType } from "@/types";
 
@@ -22,21 +22,21 @@ const product: ProductType = {
 
 describe("ProductCard", () => {
   it("links to the product detail page", () => {
-    render(<ProductCard product={product} />);
+    renderWithProviders(<ProductCard product={product} />);
 
     const link = screen.getByRole("link");
     expect(link).toHaveAttribute("href", "/products/1");
   });
 
   it("renders the product image with the product name as alt text", () => {
-    render(<ProductCard product={product} />);
+    renderWithProviders(<ProductCard product={product} />);
 
     const image = screen.getByRole("img", { name: "Adidas CoreFit T-Shirt" });
     expect(image).toHaveAttribute("src", "/products/1g.png");
   });
 
   it("renders the product name, description, price, and add to cart button", () => {
-    render(<ProductCard product={product} />);
+    renderWithProviders(<ProductCard product={product} />);
 
     expect(screen.getByText("Adidas CoreFit T-Shirt")).toBeInTheDocument();
     expect(
@@ -51,7 +51,7 @@ describe("ProductCard", () => {
   });
 
   it("renders size options with the first size selected by default", () => {
-    render(<ProductCard product={product} />);
+    renderWithProviders(<ProductCard product={product} />);
 
     const sizeSelect = screen.getByRole("combobox");
     expect(sizeSelect).toHaveValue("s");
@@ -62,7 +62,7 @@ describe("ProductCard", () => {
 
   it("updates the selected size when a different option is chosen", async () => {
     const user = userEvent.setup();
-    render(<ProductCard product={product} />);
+    renderWithProviders(<ProductCard product={product} />);
 
     const sizeSelect = screen.getByRole("combobox");
     await user.selectOptions(sizeSelect, "m");
@@ -72,7 +72,7 @@ describe("ProductCard", () => {
 
   it("updates the product image when a different color is selected", async () => {
     const user = userEvent.setup();
-    const { container } = render(<ProductCard product={product} />);
+    const { container } = renderWithProviders(<ProductCard product={product} />);
 
     const image = screen.getByRole("img", { name: "Adidas CoreFit T-Shirt" });
     expect(image).toHaveAttribute("src", "/products/1g.png");

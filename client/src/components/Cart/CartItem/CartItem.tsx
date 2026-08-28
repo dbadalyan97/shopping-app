@@ -6,6 +6,7 @@ import Image from "next/image";
 import { FC } from "react";
 import { CartItemProps } from "./types";
 import { useCartStore } from "@/store";
+import { toast } from "react-toastify";
 
 const CartItem: FC<CartItemProps> = ({ item }) => {
   const { cart } = useDictionary();
@@ -13,6 +14,7 @@ const CartItem: FC<CartItemProps> = ({ item }) => {
 
   const handleRemoveFromCart = () => {
     removeFromCart(item.id);
+    toast.success(`${item.name} removed from cart`);
   };
 
   return (

@@ -74,6 +74,9 @@
     "city": "City",
     "cityPlaceholder": "Anytown"
   },
+  "toast": {
+    "addedToCart": "{name} added to cart"
+  },
   "paymentForm": {
     "cardHolder": "Card Holder",
     "cardHolderPlaceholder": "John Doe",
