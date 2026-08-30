@@ -1,12 +1,12 @@
 {
   "brandName": "TrendHood",
   "meta": {
-    "title": "Shopping App",
-    "description": "A simple shopping experience"
+    "title": "TrendHood - Best Clothes",
+    "description": "TrendHood is the best place to find the latest fashion trends."
   },
   "home": {
     "title": "Homepage",
-    "subtitle": "Welcome to the shopping app"
+    "subtitle": "Welcome to TrendHood"
   },
   "navbar": {
     "signIn": "Sign In"
