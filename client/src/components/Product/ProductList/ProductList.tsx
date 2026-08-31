@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { Categories } from "../Categories";
 import { ProductCard } from "../ProductCard";
@@ -6,8 +8,11 @@ import { FC } from "react";
 import ProductListProps from "./types";
 import { Filter } from "@/components/Filter";
 import { Path } from "@/enums";
+import { useDictionary } from "@/hooks/useDictionary";
 
 const ProductList: FC<ProductListProps> = ({ category, path }) => {
+  const { products } = useDictionary();
+
   return (
     <div className="w-full">
       <Categories />
@@ -21,7 +26,7 @@ const ProductList: FC<ProductListProps> = ({ category, path }) => {
         href={category ? `/products?category=${category}` : "/products"}
         className="mt-4 flex justify-end text-sm text-gray-500 underline"
       >
-        View All Products
+        {products.viewAll}
       </Link>
     </div>
   );

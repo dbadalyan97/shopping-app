@@ -9,7 +9,7 @@ import { useCartStore } from "@/store";
 import { toast } from "react-toastify";
 
 const CartItem: FC<CartItemProps> = ({ item }) => {
-  const { cart } = useDictionary();
+  const { productDetails } = useDictionary();
   const { removeFromCart } = useCartStore();
 
   const handleRemoveFromCart = () => {
@@ -32,13 +32,13 @@ const CartItem: FC<CartItemProps> = ({ item }) => {
           <div className="flex flex-col gap-1">
             <p className="text-sm font-medium">{item.name}</p>
             <p className="text-xs text-gray-500">
-              {cart.quantity}: {item.quantity}
+              {productDetails.quantity}: {item.quantity}
             </p>
             <p className="text-xs text-gray-500">
-              {cart.size}: {item.selectedSize}
+              {productDetails.size}: {item.selectedSize}
             </p>
             <p className="text-xs text-gray-500">
-              {cart.color}: {item.selectedColor}
+              {productDetails.color}: {item.selectedColor}
             </p>
           </div>
           <p className="font-medium">${item.price}</p>

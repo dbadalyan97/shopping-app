@@ -8,6 +8,16 @@
     "title": "Homepage",
     "subtitle": "Welcome to TrendHood"
   },
+  "searchBar": {
+    "placeholder": "Search..."
+  },
+  "filter": {
+    "sortBy": "Sort by:",
+    "newest": "Newest",
+    "oldest": "Oldest",
+    "priceLowToHigh": "Price: Low to High",
+    "priceHighToLow": "Price: High to Low"
+  },
   "navbar": {
     "signIn": "Sign In"
   },
@@ -47,13 +57,11 @@
       "name": "Adidas CoreFit T-Shirt",
       "shortDescription": "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
       "description": "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
-    }
+    },
+    "viewAll": "View All Products"
   },
   "cart": {
     "title": "Your Shopping Cart",
-    "quantity": "Quantity",
-    "size": "Size",
-    "color": "Color",
     "details": "Cart Details",
     "subtotal": "Subtotal",
     "discount": "Discount( 10%)",
@@ -74,8 +82,15 @@
     "city": "City",
     "cityPlaceholder": "Anytown"
   },
-  "toast": {
+  "notifications": {
     "addedToCart": "{name} added to cart"
+  },
+  "productDetails": {
+    "size": "Size",
+    "color": "Color",
+    "quantity": "Quantity",
+    "addToCart": "Add to Cart",
+    "buyThisItem": "Buy this item"
   },
   "paymentForm": {
     "cardHolder": "Card Holder",
@@ -89,5 +104,8 @@
     "klarnaAlt": "Klarna",
     "cardsAlt": "Cards",
     "stripeAlt": "Stripe"
+  },
+  "singleProduct": {
+    "paymentNotice": "By clicking Pay Now, you agree to our {terms} and {privacy}. You authorize us to charge your selected payment method for the total amount shown. All sales are subject to our return and {refund}."
   }
 }

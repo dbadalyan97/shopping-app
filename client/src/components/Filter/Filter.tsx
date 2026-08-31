@@ -1,10 +1,12 @@
 "use client";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useDictionary } from "@/hooks/useDictionary";
 
 const Filter = () => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
+  const { filter } = useDictionary();
 
   const handleFilter = (value: string) => {
     const params = new URLSearchParams(searchParams);
@@ -14,17 +16,17 @@ const Filter = () => {
 
   return (
     <div className="my-6 flex items-center justify-end gap-2 text-sm text-gray-500">
-      <span>Sort by:</span>
+      <span>{filter.sortBy}</span>
       <select
         name="sort"
         id="sort"
         className="rounded-sm p-1 shadow-md ring-1 ring-gray-300"
         onChange={(e) => handleFilter(e.target.value)}
       >
-        <option value="newest">Newest</option>
-        <option value="oldest">Oldest</option>
-        <option value="asc">Price: Low to High</option>
-        <option value="desc">Price: High to Low</option>
+        <option value="newest">{filter.newest}</option>
+        <option value="oldest">{filter.oldest}</option>
+        <option value="asc">{filter.priceLowToHigh}</option>
+        <option value="desc">{filter.priceHighToLow}</option>
       </select>
     </div>
   );

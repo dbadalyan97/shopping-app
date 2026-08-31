@@ -15,7 +15,7 @@ import { toast } from "react-toastify";
 
 const ProductCard: FC<ProductCardProps> = ({ product }) => {
   const { addToCart } = useCartStore();
-  const { toast: toastMessages } = useDictionary();
+  const { notifications } = useDictionary();
   const [productTypes, setProductTypes] = useState({
     size: product.sizes[0],
     color: product.colors[0],
@@ -39,13 +39,13 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
       selectedSize: productTypes.size,
     });
 
-    toast.success(toastMessages.addedToCart.replace("{name}", product.name));
+    toast.success(notifications.addedToCart.replace("{name}", product.name));
   }, [
     addToCart,
+    notifications.addedToCart,
     product,
     productTypes.color,
     productTypes.size,
-    toastMessages.addedToCart,
   ]);
 
   return (
