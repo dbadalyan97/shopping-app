@@ -13,12 +13,15 @@ const ProductColorSelect: FC<ProductColorSelectProps> = ({
       <div className="flex items-center gap-2">
         {colors.map((color) => (
           <div
-            className={`cursor-pointer border ${selectedColor === color ? "border-gray-400" : "border-gray-200"} rounded-full p-[1.2px]`}
+            className={clsx(
+              "cursor-pointer rounded-full border p-[1.2px]",
+              selectedColor === color ? "border-gray-400" : "border-gray-200",
+            )}
             key={color}
             onClick={() => onChange({ type: "color", value: color })}
           >
             <div
-              className={clsx(`size-4 rounded-full`, {
+              className={clsx("size-4 rounded-full", {
                 "ring-2 ring-gray-300": color === colors[0],
               })}
               style={{ backgroundColor: color }}

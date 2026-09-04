@@ -9,7 +9,11 @@ const CartDetailsRow: FC<CartDetailsRowProps> = ({
 }) => {
   return (
     <div className={clsx("flex justify-between", { "text-sm": !emphasized })}>
-      <p className={emphasized ? "font-semibold text-gray-800" : "text-gray-500"}>
+      <p
+        className={clsx(
+          emphasized ? "font-semibold text-gray-800" : "text-gray-500",
+        )}
+      >
         {label}
       </p>
       <p className="font-medium">{value}</p>

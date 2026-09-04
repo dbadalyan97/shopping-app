@@ -7,6 +7,7 @@ import { useCartStore } from "@/store";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { useDictionary } from "@/hooks/useDictionary";
+import clsx from "clsx";
 
 const ProductInteraction: FC<ProductInteractionProps> = ({
   product,
@@ -52,11 +53,19 @@ const ProductInteraction: FC<ProductInteractionProps> = ({
           {product.sizes.map((size) => (
             <div
               key={size}
-              className={`cursor-pointer border p-0.5 ${selectedSize === size ? "border-gray-600" : "border-gray-300"}`}
+              className={clsx(
+                "cursor-pointer border p-0.5",
+                selectedSize === size ? "border-gray-600" : "border-gray-300",
+              )}
               onClick={() => handleTypeChange("size", size)}
             >
               <div
-                className={`flex size-6 items-center justify-center text-center ${selectedSize === size ? "bg-black text-white" : "bg-white text-black"}`}
+                className={clsx(
+                  "flex size-6 items-center justify-center text-center",
+                  selectedSize === size
+                    ? "bg-black text-white"
+                    : "bg-white text-black",
+                )}
               >
                 {size.toUpperCase()}
               </div>
@@ -70,7 +79,10 @@ const ProductInteraction: FC<ProductInteractionProps> = ({
           {product.colors.map((color) => (
             <div
               key={color}
-              className={`cursor-pointer border p-0.5 ${selectedColor === color ? "border-gray-500" : "border-white"}`}
+              className={clsx(
+                "cursor-pointer border p-0.5",
+                selectedColor === color ? "border-gray-500" : "border-white",
+              )}
               onClick={() => handleTypeChange("color", color)}
             >
               <div className="size-6" style={{ backgroundColor: color }} />
