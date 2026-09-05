@@ -199,8 +199,8 @@ const CardList = ({ title }: { title: string }) => {
                 <CardContent className="flex-1 p-0">
                   <CardTitle className="text-sm font-medium">
                     {item.title}
-                    <Badge variant="secondary">{item.badge}</Badge>
                   </CardTitle>
+                  <Badge variant="secondary">{item.badge}</Badge>
                 </CardContent>
                 <CardFooter className="p-0">{item.count / 1000}K</CardFooter>
               </Card>
