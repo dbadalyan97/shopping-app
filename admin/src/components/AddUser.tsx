@@ -33,7 +33,7 @@ const formSchema = z.object({
   role: z.enum(["admin", "user"]),
 });
 
-const EditUser = () => {
+const AddUser = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -44,10 +44,11 @@ const EditUser = () => {
       city: "New York",
     },
   });
+
   return (
     <SheetContent>
       <SheetHeader>
-        <SheetTitle className="mb-4">Edit User</SheetTitle>
+        <SheetTitle className="mb-4">Add User</SheetTitle>
         <SheetDescription asChild>
           <Form {...form}>
             <form className="space-y-8">
@@ -138,4 +139,4 @@ const EditUser = () => {
   );
 };
 
-export default EditUser;
+export default AddUser;
