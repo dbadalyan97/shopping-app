@@ -1,14 +1,15 @@
 {
-  "name": "shadcn",
+  "name": "admin",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev --turbopack -p 3003",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "commit": "cz",
-    "prepare": "cd .. && husky admin/.husky"
+    "prepare": "cd .. && husky admin/.husky",
+    "check-types": "tsc --noEmit"
   },
   "config": {
     "commitizen": {
