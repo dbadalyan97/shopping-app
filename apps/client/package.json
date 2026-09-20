@@ -13,13 +13,7 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "commit": "cz",
     "check-types": "next typegen && tsc --noEmit"
-  },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
   },
   "dependencies": {
     "@hookform/resolvers": "^5.9.1",
@@ -45,8 +39,6 @@
     "@types/react-dom": "^19",
     "@vitejs/plugin-react": "^6.0.5",
     "babel-plugin-react-compiler": "1.0.0",
-    "commitizen": "^4.3.2",
-    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^9",
     "eslint-config-next": "16.2.11",
     "eslint-config-prettier": "^10.1.8",
