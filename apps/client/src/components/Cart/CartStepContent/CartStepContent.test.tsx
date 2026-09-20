@@ -1,7 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 import { renderWithProviders, screen } from "@/test/test-utils";
 import CartStepContent from "./CartStepContent";
-import { PRODUCTS } from "@/constants";
 
 vi.mock("@/components/Cart/CartItems", () => ({
   CartItems: ({ items }: { items: Array<{ id: number | string }> }) => (
