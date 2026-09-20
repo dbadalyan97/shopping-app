@@ -21,7 +21,7 @@ const CartStepContent: FC<CartStepContentProps> = ({
       ) : activeStep === "2" ? (
         <ShippingForm setShippingForm={setShippingForm} />
       ) : activeStep === "3" && shippingForm ? (
-        <PaymentForm />
+        <PaymentForm setPaymentForm={() => {}} />
       ) : (
         <p className="text-sm text-gray-500">{cartInfo.fillShippingForm}</p>
       )}

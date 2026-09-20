@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack -p 3002",
+    "dev": "next dev --turbopack -p 3000",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
@@ -14,7 +14,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "commit": "cz",
-    "check-types": "tsc --noEmit"
+    "check-types": "next typegen && tsc --noEmit"
   },
   "config": {
     "commitizen": {
@@ -35,7 +35,7 @@
     "zustand": "^5.0.15"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "@hookform/resolvers/zod",
+    "@tailwindcss/postcss": "^4",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^7.0.0",
     "@testing-library/react": "^16.3.2",
