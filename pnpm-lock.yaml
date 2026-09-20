@@ -120,9 +120,9 @@ importers:
         specifier: ^3.24.2
         version: 3.25.76
     devDependencies:
-      '@eslint/eslintrc':
-        specifier: ^3
-        version: 3.3.7(supports-color@7.2.0)
+      '@next/eslint-plugin-next':
+        specifier: 15.3.0
+        version: 15.3.0
       '@tailwindcss/postcss':
         specifier: ^4
         version: 4.3.3

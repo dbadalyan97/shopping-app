@@ -17,15 +17,6 @@ vi.mock("@/components/Form/PaymentForm", () => ({
   PaymentForm: () => <div data-testid="payment-form">Payment Form</div>,
 }));
 
-const cartItems = [
-  {
-    ...PRODUCTS[0],
-    quantity: 1,
-    selectedSize: PRODUCTS[0]?.sizes[0],
-    selectedColor: PRODUCTS[0]?.colors[0],
-  },
-];
-
 describe("CartStepContent", () => {
   it("renders cart items for the first step", () => {
     renderWithProviders(
